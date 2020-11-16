@@ -64,8 +64,6 @@ public class MoneyTransferTest {
         val verificationPage = loginPage.validLogin(authInfo);
         val verificationCode = DataHelper.getVerificationCode(authInfo);
         val dashboardPage = verificationPage.verify(verificationCode);
-        int balanceOfFirstCardBefore = DashboardPage.getCurrentBalanceOfFirstCard();
-        int balanceOfSecondCardBefore = DashboardPage.getCurrentBalanceOfSecondCard();
         val transferPage = dashboardPage.firstCard();
         val cardInfo = DataHelper.getSecondCardInfo();
         transferPage.transferCard(cardInfo, amount);
